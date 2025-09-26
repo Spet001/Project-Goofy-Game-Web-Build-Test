@@ -1,0 +1,75 @@
+using UnityEngine;
+using System.Collections;
+
+// Responsável por instanciar, destruir e controlar o ciclo da cadeira + cadeirante
+public class GameManager : MonoBehaviour
+{
+    public static GameManager Instance;
+
+    [Header("Prefabs")]
+    public GameObject wheelchairPrefab;
+    public GameObject riderPrefab;
+
+    [Header("Spawn Settings")]
+    public Transform spawnPoint;
+
+    [Header("Camera")]
+    public CameraFollow cameraFollow;
+
+    private GameObject currentChair;
+    private GameObject currentRider;
+
+    private void Awake()
+    {
+        // Singleton
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        SpawnNewChairAndRider();
+    }
+
+    public void SpawnNewChairAndRider()
+    {
+        // Destrói instâncias anteriores
+        if (currentChair != null) Destroy(currentChair);
+        if (currentRider != null) Destroy(currentRider);
+
+        // Instancia cadeira e rider
+        currentChair = Instantiate(wheelchairPrefab, spawnPoint.position, spawnPoint.rotation);
+        currentRider = Instantiate(riderPrefab, spawnPoint.position + Vector3.up * 0.5f, Quaternion.identity);
+
+        // Conecta rider à cadeira
+        var controller = currentChair.GetComponent<WheelchairController>();
+        if (controller != null)
+        {
+            controller.AttachRider(currentRider);
+        }
+
+        // Atualiza câmera
+        if (cameraFollow != null)
+        {
+            cameraFollow.defaultTarget = currentChair.transform;
+            cameraFollow.playerTarget = currentRider.transform;
+            cameraFollow.ReturnToWheelchair();
+        }
+    }
+
+    public void OnRiderEjected()
+    {
+        // Aguarda um tempo antes de respawnar
+        StartCoroutine(RespawnAfterDelay(3f));
+    }
+
+    private IEnumerator RespawnAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SpawnNewChairAndRider();
+    }
+}

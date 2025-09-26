@@ -1,0 +1,51 @@
+# Arquivos gerados pelo Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Pp]roject[Ss]ettings/
+/[Gg]enerated[Aa]ssets/
+/[Ii]ndexing[Pp]erformance[Rr]eport/
+/[Pp]ackages/
+
+Assets/New Terrain Layer_Generated Terrain Maps
+Assets/_Recovery
+Assets/AI Toolkit
+Assets/LoafbrrAssets/Interiors_A
+Assets/New Terrain Layer 3_Generated Terrain Maps
+Assets/New Material 1_Generated Maps
+Assets/Settings
+
+# Arquivos de solução e projeto do Visual Studio
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.vscode/
+
+# Arquivos de backup e temporários
+*~
+*.bak
+*.tmp
+temp-*
+
+# Arquivos específicos do seu projeto para ignorar
+TODO.txt
+
+# Arquivos de depuração e crash
+/[Ss]ymlinks/
+*.stackdump
+
+# Arquivos de metadados
+*.meta
+
+# Arquivos do Rider
+.idea/
+
+# Outros arquivos comuns para ignorar
+.DS_Store
+Thumbs.db
