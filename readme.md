@@ -1,6 +1,5 @@
 # Cadeirante Simulator (Goofy Game) - Desafio WebGL
 
-![Screenshot do Jogo](image_cf323e.png)
 
 ## 📜 Sobre o Projeto
 
