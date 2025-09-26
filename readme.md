@@ -6,7 +6,7 @@
 
 Este projeto é uma adaptação do "Project Goofy Game", um jogo com uma proposta de humor (Goofy Game). A principal motivação deste repositório foi realizar um desafio técnico: clonar o projeto original e modificar suas configurações para compilá-lo e publicá-lo para a plataforma **WebGL**, permitindo que o jogo seja executado diretamente em um navegador web.
 
-O jogo consiste em um cenário 3D simples onde o jogador controla um personagem em uma cadeira de rodas.
+O jogo consiste em um cenário 3D simples onde o jogador controla um personagem em uma cadeira de rodas. **Nota:**Compilei um commit antigo aonde a câmera está bugada, mas o player está na cena SIM, consegue-se encontrar ele ao mexer um pouco o jogador.
 
 ## ✨ Funcionalidades
 
