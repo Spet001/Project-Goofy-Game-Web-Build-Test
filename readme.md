@@ -32,7 +32,7 @@ Acesse:
 
 Repo orginal:
 
-* [Netlify](https://github.com/Spet001/Project-Goofy-Game-)
+* [GitHub](https://github.com/Spet001/Project-Goofy-Game-)
 
 
 ## 🛠️ Tecnologias Utilizadas
